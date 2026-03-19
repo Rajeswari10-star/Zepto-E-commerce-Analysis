@@ -152,6 +152,12 @@ case
 end as weight_category
 from zepto;
 
+#### ----Q8. What is the Total Inventory Weight Per Category
+select category ,
+sum(weightInGms * availableQuantity) as total_weight
+from zepto
+group by category
+order by total_weight;
 
 
 ## 📊 Key Business Insights
