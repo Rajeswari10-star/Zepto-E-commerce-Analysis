@@ -152,9 +152,37 @@ case
 end as weight_category
 from zepto;
 
-#### ----Q8. What is the Total Inventory Weight Per Category
-select category ,
-sum(weightInGms * availableQuantity) as total_weight
-from zepto
-group by category
-order by total_weight;
+
+
+## 📊 Key Business Insights
+#### 1. 🏆 Top Discounted Products: Identified top 10 products offering the highest discounts.
+
+#### 2. ⚠️ High-Value Out-of-Stock Products: Found products with high MRP (> ₹300) that are out of stock , which is seful for inventory restocking decisions
+
+#### 3. 💰 Revenue by Category: Calculated estimated revenue  which helps identify top-performing categories
+
+#### 4. 📉 Low Discount on Premium Products: Products with MRP > ₹500 but discount < 10%, which indicates potential pricing optimization
+
+#### 5. 🥇 Best Discount Categories: Top 5 categories with highest average discount, which is useful for marketing and promotional strategies
+
+#### 6. ⚖️ Price Efficiency (Price per Gram): Identified best-value products based on cost per gram, which helps customers and business optimize pricing
+
+#### 7. 📦 Product Segmentation by Weight: Products grouped into:
+Low (< 1kg)
+
+Medium (1kg–5kg)
+
+Bulk (> 5kg)
+
+#### 8. 📦 Inventory Weight Analysis: Total inventory weight calculated per category, which is useful for logistics and warehouse planning
+
+#### 🛠️ Tools & Technologies: 
+##### SQL (PostgreSQL/MySQL compatible)
+
+##### Data Cleaning & Transformation
+
+##### Analytical Queries
+
+##### Business Insight Generation
+
+
