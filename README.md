@@ -33,14 +33,14 @@ outofStock BOOLEAN,
 quantity INTEGER
 );
 
----- 1.Count of Rows
+#### ---- 1.Count of Rows
 select count(*) from zepto;
 
-----2.Sample Data
+#### ----2.Sample Data
 select * from zepto
 limit 10;
 
----- 3.null Values
+#### ---- 3.null Values
 select * from zepto
 where name is null 
 or
@@ -60,17 +60,17 @@ outofStock is null
 or
 quantity is null;
 
----- 4.Different Product Categories
+#### ---- 4.Different Product Categories
 select distinct category
 from zepto
 order by category;
 
----- 5.Products in stock vs Out of stock
+#### ---- 5.Products in stock vs Out of stock
 select outofStock , count(sku_id)
 from zepto
 group by outofStock;
 
----- 6.Product names present multiple times
+#### ---- 6.Product names present multiple times
 select name, count(sku_id) as "Number of SKUs"
 from zepto
 group by name
@@ -84,8 +84,8 @@ order by count(sku_id) desc;
 #### 2.Converted prices from paise to rupees
 #### 3.Ensured consistency in pricing columns
 
------Data Cleaning
----- 7.Checking product with price zero
+#### -----Data Cleaning
+#### ---- 7.Checking product with price zero
 select * from zepto
 where mrp=0
 and discountedSellingPrice=0;
@@ -93,7 +93,7 @@ and discountedSellingPrice=0;
 delete from zepto 
 where mrp=0;
 
----- 8.Convert Paise to Rupees
+#### ---- 8.Convert Paise to Rupees
 Update zepto
 Set mrp=mrp/100.0,
 discountedSellingPrice=discountedSellingPrice/100.0;
